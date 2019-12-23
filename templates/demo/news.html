@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <%template src="_header.html"%>
+</head>
+<body>
+    <%template src="_head.html"%>
+
+    <div class="content">
+        <div class="main-pad-7">
+            <div class="main-pad-8">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="subnav">
+                                <div class="biaoti"><span>新闻资讯</span></div>
+                                <ul class="list-unstyled clearfix">
+                                    <%set DataTable p_list=get_category_list("news",0)%>
+                                    <%loop p_adder p_list%>
+                                    <%set int firstID=get_first_parent_id(category_id)%>
+                                    <li class="<%if firstID=={strtoint({p_adder[id]})}%>active<%/if%>"><a href='<%linkurl("news_lb",{p_adder[id]})%>' class="tr overflow ">{p_adder[title]}</a></li>
+                                    <%/loop%>
+                                </ul>
+                                <%template src="_lxwm.html"%>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="title-5 clearfix hidden-xs hidden-sm">
+                                <div class="biaoti pull-left">新闻资讯</div>
+                            </div>
+                            <div class="text-6">
+                                <ul class="list-unstyled no-margin">
+                                    <%set DataTable list=get_article_list(channel, category_id, pagesize, page, "status=0", out totalcount, out pagelist, "news_lb", category_id,"__id__")%>
+                                    <%foreach (DataRow acpabdr in list.Rows)%>
+                                    <li>
+                                        <a href='<%linkurl("news-show",{acpabdr[id]})%>' class="clearfix">
+                                            <div class="mc pull-left tr overflow">{acpabdr[title]}</div>
+                                            <div class="time pull-right text-right"><%datetostr({acpabdr[add_time]},yyyy-MM-dd)%></div>
+                                        </a>
+                                    </li>
+                                    <%/loop%>
+                                </ul>
+                                <!--分页-->
+                                <div class="scott" style="padding-top: 20px;">
+                                    <span>
+                                        {pagelist}
+                                    </span>
+                                </div>
+                            </div>
+                            <%template src="_red.html"%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

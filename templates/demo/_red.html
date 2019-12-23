@@ -1,0 +1,37 @@
+<div class="main-pad-1">
+    <div class="title-6">
+        <div class="jiangexian"></div>
+        <div class="en text-uppercase">Recommended reading</div>
+        <div class="cn">推荐阅读</div>
+    </div>
+    <div class="main-pad-3">
+        <div class="picture-7">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <%set DataTable news_list=get_article_list("news",4,"status=0 and is_red=1")%>
+                    <%loop news_adder news_list%>
+                    <div class="swiper-slide">
+                        <div class="picture-7-list">
+                            <a href='<%linkurl("news-show",{news_adder[id]})%>' class="clearfix">
+                                <div class="imgbox pull-left wow animate fadeIn">
+                                    <span class="tr3 sizeCover" style="background-image: url({news_adder[img_url]})"></span>
+                                </div>
+                                <div class="textbox pull-left tr">
+                                    <div class="biaoti clearfix">
+                                        <div class="mc pull-left tr overflow">{news_adder[title]}</div>
+                                        <div class="time tr pull-right text-right"><%datetostr({news_adder[add_time]},yyyy-MM-dd)%></div>
+                                    </div>
+                                    <div class="jieshao tr">
+                                        {news_adder[zhaiyao]}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <%/loop%>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>

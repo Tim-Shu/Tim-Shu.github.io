@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <%template src="_header.html"%>
+</head>
+<body>
+    <%template src="_head.html"%>
+
+    <div class="content">
+        <!-- 产品中心 -->
+        <div class="main-pad-1">
+            <div class="main-pad-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="title-1 text-center wow animate fadeInUp">
+                                <div class="cn">产品中心</div>
+                                <div class="jiangexian"></div>
+                                <div class="en text-uppercase">product</div>
+                                <div class="jieshao">矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、销售.</div>
+                            </div>
+                            <div class="main-pad-3">
+                                <div class="title-2 wow animate fadeInUp">
+                                    <ul class="list-unstyled clearfix">
+                                        <%set DataTable pr_list=get_category_list("product",0)%>
+                                        <%loop pr_adder pr_list%>
+                                        <li class="pull-left <%if pr_adder__loop__id==1%>active<%/if%>"><a class="tr text-center"><span>{pr_adder[title]}</span></a></li>
+                                        <%/loop%>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-pad-3">
+                                <div class="title-2-nr-box wow animate fadeInUp">
+                                    <!-- 各类橡胶密封件 -->
+                                    <%loop pr_adder2 pr_list%>
+                                    <div class="title-2-nr">
+                                        <div class="picture-1">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <%set DataTable pr1_list=get_article_list("product",{strtoint({pr_adder2[id]})},8,"")%>
+                                                    <%loop pr1_adder pr1_list%>
+                                                    <div class="swiper-slide">
+                                                        <div class="picture-1-list">
+                                                            <a href='<%linkurl("product-show",{pr1_adder[id]})%>'>
+                                                                <div class="imgbox">
+                                                                    <span class="tr3 sizeCover" style="background-image: url({pr1_adder[img_url]})"></span>
+                                                                </div>
+                                                                <div class="textbox tr text-center overflow">{pr1_adder[title]}</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <%/loop%>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main-pad-3">
+                                            <div class="more-1">
+                                                <a href='<%linkurl("product")%>' class="text-center text-uppercase">
+                                                    <span>see more</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%/loop%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 优势 01 02-->
+        <div class="main-pad-2" style="overflow: hidden;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="title-3 text-center">
+                            <b class="wow animate fadeIn" style="animation-delay: 0.5s;"></b>
+                            <b class="wow animate fadeIn" style="animation-delay: 0.5s;"></b>
+                            <b class="wow animate fadeIn" style="animation-delay: 0.5s;"></b>
+                            <b class="wow animate fadeIn" style="animation-delay: 0.5s;"></b>
+                            <b class="wow animate fadeIn" style="animation-delay: 0.5s;"></b>
+                            <div class="box">
+                                <div class="maxbiaoti wow animate fadeInLeftBig">选择</div>
+                                <div class="textbox wow animate fadeInRightBig">
+                                    <div class="biaoti">上海矽克密封科技有限公司</div>
+                                    <div class="jieshao">以诚信的态度，做立世的企业</div>
+                                    <div class="tel">
+                                        <div class="icon"><img src="<%templateskin%>/images/tel2.png" alt=""></div>
+                                        <div class="mc">24小时服务热线：180-18851256</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-pad-4">
+                            <div class="clearfix">
+                                <div class="picture-2 wow animate fadeInRightBig">
+                                    <div class="imgbox sizeCover" style="background-image: url(<%templateskin%>/images/p2_img.jpg)"></div>
+                                </div>
+                                <div class="text-1">
+                                    <ul class="list-unstyled no-margin">
+                                        <li class="wow animate fadeInUp">
+                                            <div class="biaoti clearfix">
+                                                <div class="maxshuzi pull-left" data-title="01">01</div>
+                                                <div class="text pull-left">
+                                                    <div class="cn">制造优势</div>
+                                                    <div class="en text-uppercase">Manufacturing advantage</div>
+                                                </div>
+                                            </div>
+                                            <div class="jieshao">
+                                                矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、
+                                                销售及提供客户服务.
+                                            </div>
+                                        </li>
+                                        <li class="wow animate fadeInUp">
+                                            <div class="biaoti clearfix">
+                                                <div class="maxshuzi pull-left" data-title="02">02</div>
+                                                <div class="text pull-left">
+                                                    <div class="cn">经验优势</div>
+                                                    <div class="en text-uppercase">Empirical advantage</div>
+                                                </div>
+                                            </div>
+                                            <div class="jieshao">
+                                                矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、
+                                                销售及提供客户服务.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 优势 03 04-->
+        <div class="main-pad-1 main-background-2 wow animate fadeInUp">
+            <div class="main-pad-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-6">
+                            <div class="text-1 active">
+                                <ul class="list-unstyled no-margin">
+                                    <li class="wow animate fadeInUp">
+                                        <div class="biaoti clearfix">
+                                            <div class="maxshuzi pull-left" data-title="03">03</div>
+                                            <div class="text pull-left">
+                                                <div class="cn">管理优势</div>
+                                                <div class="en text-uppercase">Manufacturing advantage</div>
+                                            </div>
+                                        </div>
+                                        <div class="jieshao">
+                                            矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、
+                                            销售及提供客户服务.
+                                        </div>
+                                    </li>
+                                    <li class="wow animate fadeInUp">
+                                        <div class="biaoti clearfix">
+                                            <div class="maxshuzi pull-left" data-title="04">04</div>
+                                            <div class="text pull-left">
+                                                <div class="cn">服务优势</div>
+                                                <div class="en text-uppercase">Empirical advantage</div>
+                                            </div>
+                                        </div>
+                                        <div class="jieshao">
+                                            矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、
+                                            销售及提供客户服务.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 公司简介 -->
+        <div class="main-pad-1">
+            <div class="main-pad-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="title-1 text-center wow animate fadeInUp">
+                                <div class="cn">公司简介</div>
+                                <div class="jiangexian"></div>
+                                <div class="en text-uppercase">about us</div>
+                                <div class="jieshao">矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、销售.</div>
+                            </div>
+                            <div class="main-pad-3">
+                                <div class="clearfix">
+                                    <div class="picture-3 wow animate fadeInLeftBig">
+                                        <div class="imgbox sizeCover" style="background-image: url(<%=get_article_img_url(196)%>)"></div>
+                                    </div>
+                                    <div class="picture-4 wow animate fadeInRightBig">
+                                        <div class="top">
+                                            <ul class="list-unstyled clearfix">
+                                                <li class="pull-left">
+                                                    <div class="imgbox">
+                                                        <span class="tr3 sizeCover" style="background-image: url(<%=get_article_img_url(6)%>)"></span>
+                                                    </div>
+                                                </li>
+                                                <li class="pull-left">
+                                                    <div class="imgbox">
+                                                        <span class="tr3 sizeCover" style="background-image: url(<%=get_article_img_url(192)%>)"></span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="jieshao">
+                                            <%=get_article_content("iabout")%>
+                                        </div>
+                                        <div class="menu">
+                                            <ul class="list-unstyled clearfix">
+                                                <%set DataTable list_ab=get_article_list("about",0,"")%>
+                                                <%loop adder_ab list_ab%>
+                                                <li class="pull-left <%if adder_ab__loop__id==1%>active<%/if%>">
+                                                    <a href='<%linkurl("about",{adder_ab[id]})%>' class="text-center tr"><span>{adder_ab[title]}</span></a>
+                                                </li>
+                                                <%csharp%>
+                                                if({adder_ab__loop__id}>2) break;
+                                                <%/csharp%>
+                                                <%/loop%>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新闻资讯 -->
+        <div class="main-pad-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="title-1 text-center wow animate fadeInUp">
+                            <div class="cn">新闻资讯</div>
+                            <div class="jiangexian"></div>
+                            <div class="en text-uppercase">news</div>
+                            <div class="jieshao">矽克专心致力于精密橡胶密封件、硅胶橡胶表带及精密橡胶制品的研发、制造、销售.</div>
+                        </div>
+                        <div class="main-pad-3">
+                            <div class="clearfix">
+                                <div class="picture-5 text-right wow animate fadeInRightBig">
+                                    <img src="<%templateskin%>/images/p5_img.png" alt="">
+                                </div>
+                                <div class="text-2 wow animate fadeInLeftBig">
+                                    <div class="menu">
+                                        <ul class="list-unstyled clearfix">
+                                            <%set DataTable ne_list=get_category_list("news",0)%>
+                                            <%loop ne_adder ne_list%>
+                                            <li class="pull-left <%if ne_adder__loop__id==1%>active<%/if%>"><a class="tr"><span>{ne_adder[title]}</span></a></li>
+                                            <%/loop%>
+                                        </ul>
+                                    </div>
+                                    <div class="textbox">
+                                        <!-- 公司新闻 -->
+                                        <%loop ne_adder2 ne_list%>
+                                        <ul class="list-unstyled no-margin <%if ne_adder2__loop__id==1%>active<%/if%>">
+                                            <%set DataTable ne1_list=get_article_list("news",{strtoint({ne_adder2[id]})},4,"")%>
+                                            <%loop ne1_adder ne1_list%>
+                                            <li><a href='<%linkurl("news-show",{ne1_adder[id]})%>' class="overflow">{ne1_adder[title]}</a></li>
+                                            <%/loop%>
+                                        </ul>
+                                        <%/loop%>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-pad-3 wow animate fadeInUp">
+                                <div class="text-2-more">
+                                    <!-- 公司新闻的查看更多 -->
+                                    <div class="more-1">
+                                        <a href='<%linkurl("news")%>' class="text-center text-uppercase">
+                                            <span>see more</span>
+                                        </a>
+                                    </div>
+                                    <!-- 行业资讯的查看更多 -->
+                                    <div class="more-1">
+                                        <a href='<%linkurl("news")%>' class="text-center text-uppercase">
+                                            <span>see more</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-pad-5 main-background-1">
+            <div class="main-pad-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="title-4 wow animate fadeInUp">
+                                <div class="clearfix">
+                                    <div class="left pull-left">
+                                        <div class="cn pull-left">设备展示</div>
+                                        <div class="en pull-left text-uppercase">device</div>
+                                    </div>
+                                    <div class="right pull-right">
+                                        <a class="tr pull-left"><</a>
+                                        <a class="tr pull-left">></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-pad-5">
+                                <div class="picture-6 wow animate fadeInUp">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <%set DataTable ca_list=get_article_list("case",12,"status=0 and is_red=1")%>
+                                            <%loop ca_adder ca_list%>
+                                            <div class="swiper-slide">
+                                                <div class="picture-6-list">
+                                                    <a href='<%linkurl("case-show",{ca_adder[id]})%>'>
+                                                        <div class="imgbox">
+                                                            <span class="tr3 sizeCover" style="background-image: url({ca_adder[img_url]})"></span>
+                                                        </div>
+                                                        <div class="textbox tr text-center overflow">{ca_adder[title]}</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <%/loop%>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%template src="_footer.html"%>
+    <%foreach(QJcms.Model.article_attach modelt in get_artice_attach(196))%>
+    <script>
+    $(function () {
+
+        //产品中心
+        $('.picture-1').each(function (z) {
+            $('.picture-1').eq(z).addClass('picture-1-' + (z + 1));
+            var p1swiper = new Swiper('.picture-1-' + (z + 1) + ' .swiper-container', {
+                slidesPerView: 4,
+                speed: 800,
+                autoplay: {
+                    delay: 5000
+                },
+                spaceBetween: 26,
+                slidesPerColumn: 2,
+                slidesPerColumnFill: 'row',
+                disableOnInteraction: false,
+                breakpoints: {
+                    991: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    }
+                }
+            })
+        })
+        $('.title-2-nr:nth-child(n+2)').hide();
+        $('.title-2 ul li').click(function () {
+            if (!$(this).hasClass('active') && $('.title-2-nr').eq($(this).index()).is(':hidden')) {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.title-2-nr').eq($(this).index()).show().siblings().hide();
+            }
+        })
+
+        //视频
+
+        $('.picture-3 .imgbox').click(function () {
+            var str = '<video width="100%" height="100%" controls><source src="{modelt.file_path}"  type="video/mp4">您的浏览器不支持 HTML5 video 标签。</video>';
+            $(this).remove();
+            $('.picture-3').append(str);
+            var videos = $('.picture-3 video');
+            videos.trigger('play');
+        })
+
+        //新闻资讯
+        $('.text-2 .menu ul li').click(function () {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+            $('.text-2 .textbox ul').eq($(this).index()).addClass('active');
+            $('.text-2 .textbox ul').eq($(this).index()).siblings().removeClass('active');
+            $('.text-2-more .more-1').eq($(this).index()).show();
+            $('.text-2-more .more-1').eq($(this).index()).siblings().hide();
+        })
+
+        //设备展示
+        var p6swiper = new Swiper('.picture-6 .swiper-container', {
+            slidesPerView: 4,
+            speed: 800,
+            autoplay: {
+                delay: 5000
+            },
+            spaceBetween: 20,
+            disableOnInteraction: false,
+            navigation: {
+                prevEl: '.title-4 .right a:nth-child(1)',
+                nextEl: '.title-4 .right a:nth-child(2)'
+            },
+            breakpoints: {
+                991: {
+                    slidesPerView: 2
+                }
+            }
+        })
+
+    })
+    </script>
+    <%/foreach%>
+</body>
+</html>

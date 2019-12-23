@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <%template src="_header.html"%>
+</head>
+<body>
+    <%template src="_head.html"%>
+
+    <div class="content">
+        <div class="main-pad-7">
+            <div class="main-pad-8">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="subnav">
+                                <div class="biaoti"><span>设备展示</span></div>
+                                <ul class="list-unstyled clearfix">
+                                    <%set DataTable p_list=get_category_list("case",0)%>
+                                    <%loop p_adder p_list%>
+                                    <%set int firstID=get_first_parent_id(model.category_id)%>
+                                    <li class="<%if firstID=={strtoint({p_adder[id]})}%>active<%/if%>"><a href='<%linkurl("case_lb",{p_adder[id]})%>' class="tr overflow">{p_adder[title]}</a></li>
+                                    <%/loop%>
+                                </ul>
+                                <%template src="_lxwm.html"%>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="title-5 clearfix hidden-xs hidden-sm">
+                                <div class="biaoti pull-left">设备展示</div>
+                            </div>
+                            <div class="title-7 text-center">
+                                <div class="biaoti">{model.title}</div>
+                            </div>
+                            <div class="picture-9 text-center wow animate fadeIn">
+                                <img src="{model.img_url}" alt="">
+                            </div>
+                            <div class="text-7 maximg">
+                                {model.content}
+                            </div>
+                            <%template src="_red.html"%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

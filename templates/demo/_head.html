@@ -1,0 +1,142 @@
+<div class="menu-box hidden-md hidden-lg">
+    <ul class="list-unstyled no-margin clearfix">
+        <li>
+            <a href='<%linkurl("index")%>'>网站首页</a>
+        </li>
+        <li>
+            <a href='<%linkurl("about",192)%>'>公司简介</a>
+        </li>
+        <li>
+            <a href='<%linkurl("product")%>'>产品中心</a>
+        </li>
+        <li>
+            <a href='<%linkurl("case")%>'>设备展示</a>
+        </li>
+        <li>
+            <a href='<%linkurl("news")%>'>新闻资讯</a>
+        </li>
+        <li>
+            <a href='<%linkurl("service")%>'>技术资料</a>
+        </li>
+        <li>
+            <a href='<%linkurl("contact")%>'>联系我们</a>
+        </li>
+    </ul>
+</div>
+
+<header>
+    <div class="top_bar hidden-xs hidden-sm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 clearfix">
+                    <div class="biaoyu pull-left">欢迎来到{config.webname}官网～</div>
+                    <div class="tel pull-right">
+                        <div class="icon pull-left"><img src="<%templateskin%>/images/tel.png" alt=""></div>
+                        <div class="text pull-left text-uppercase">Service Hotline:{config.webtel}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qita">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 clearfix">
+                    <div class="logo pull-left">
+                        <a href="/">
+                            <img src="<%templateskin%>/images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="fenxiang pull-right hidden-xs hidden-sm">
+                        <div class="icon"><img src="<%templateskin%>/images/weixin.png" alt=""></div>
+                        <div class="imgbox tr">
+                            <span><img src="{config.webewm1}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="menu pull-right hidden-xs hidden-sm">
+                        <ul class="list-unstyled no-margin clearfix">
+                            <li class="pull-left"><a href='<%linkurl("index")%>' class="tr">网站首页</a></li>
+                            <li class="pull-left">
+                                <a href='<%linkurl("about",192)%>' class="tr">公司简介</a>
+                                <div class="xiala tr2">
+                                    <div class="ul">
+                                        <%set DataTable abt_list=get_article_list("about",0,"")%>
+                                        <%loop abt_adder abt_list%>
+                                        <div class="li"><a href='<%linkurl("about",{abt_adder[id]})%>' class="tr">{abt_adder[title]}</a></div>
+                                        <%/loop%>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-left">
+                                <a href='<%linkurl("product")%>' class="tr">产品中心</a>
+                                <div class="xiala tr2">
+                                    <div class="ul">
+                                        <%set DataTable pi_list=get_category_list("product",0)%>
+                                        <%loop pi_adder pi_list%>
+                                        <div class="li"><a href='<%linkurl("product_lb",{pi_adder[id]})%>' class="tr">{pi_adder[title]}</a></div>
+                                        <%/loop%>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-left">
+                                <a href='<%linkurl("case")%>' class="tr">设备展示</a>
+                                <div class="xiala tr2">
+                                    <div class="ul">
+                                        <%set DataTable ci_list=get_category_list("case",0)%>
+                                        <%loop ci_adder ci_list%>
+                                        <div class="li"><a href='<%linkurl("case_lb",{ci_adder[id]})%>' class="tr">{ci_adder[title]}</a></div>
+                                        <%/loop%>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-left">
+                                <a href='<%linkurl("news")%>' class="tr">新闻资讯</a>
+                                <div class="xiala tr2">
+                                    <div class="ul">
+                                        <%set DataTable ni_list=get_category_list("news",0)%>
+                                        <%loop ni_adder ni_list%>
+                                        <div class="li"><a href='<%linkurl("news_lb",{ni_adder[id]})%>' class="tr">{ni_adder[title]}</a></div>
+                                        <%/loop%>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-left"><a href='<%linkurl("service")%>' class="tr">技术资料</a></li>
+                            <li class="pull-left"><a href='<%linkurl("contact")%>' class="tr">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-btn pull-right hidden-md hidden-lg">
+                        <b class="tr"></b>
+                        <b class="tr"></b>
+                        <b class="tr"></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="banner wow animate fadeIn">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#">
+                    <img class="hidden-xs hidden-sm" src="<%templateskin%>/images/1.jpg" alt="">
+                    <img class="hidden-md hidden-lg" src="<%templateskin%>/images/11.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img class="hidden-xs hidden-sm" src="<%templateskin%>/images/2.jpg" alt="">
+                    <img class="hidden-md hidden-lg" src="<%templateskin%>/images/22.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img class="hidden-xs hidden-sm" src="<%templateskin%>/images/3.jpg" alt="">
+                    <img class="hidden-md hidden-lg" src="<%templateskin%>/images/33.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <%template src="_header.html"%>
+</head>
+<body>
+    <%template src="_head.html"%>
+
+    <div class="content">
+        <div class="main-pad-7">
+            <div class="main-pad-8">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="subnav">
+                                <div class="biaoti"><span>{model.title}</span></div>
+                                <ul class="list-unstyled clearfix">
+                                    <%set DataTable list_a=get_article_list("about",0,"")%>
+                                    <%loop adder_a list_a%>                                
+                                    <li class="<%if ({adder_a[id]}==model.id.ToString())%>active<%/if%>"><a href='<%linkurl("about",{adder_a[id]})%>' class="tr overflow">{adder_a[title]}</a></li>
+                                    <%/loop%>
+                                </ul>
+                                <%template src="_lxwm.html"%>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="title-5 clearfix hidden-xs hidden-sm">
+                                <div class="biaoti pull-left">{model.title}</div>
+                            </div>
+                            <div class="text-3 maximg">   
+                                {model.content}
+                            </div>
+                            <%template src="_red.html"%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

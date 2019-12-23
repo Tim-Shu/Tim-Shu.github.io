@@ -1,0 +1,159 @@
+<footer>
+    <div class="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="biaoti clearfix">
+                        <div class="cn pull-left">联系我们</div>
+                        <div class="xiexian pull-left">/</div>
+                        <div class="en pull-left">Contact us</div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="contact pull-left">
+                            <div class="imgbox pull-left wow animate fadeIn">
+                                <span class="sizeCover" style="background-image: url(<%templateskin%>/images/footer_contact_img.jpg)"></span>
+                            </div>
+                            <div class="textbox pull-left">
+                                <ul class="list-unstyled no-margin clearfix">
+
+                                    <li class="clearfix">
+                                        <div class="icon pull-left"><img src="<%templateskin%>/images/footer_contact_dianhua.png" alt=""></div>
+                                        <div class="mc pull-left">电   话：{config.webtel}</div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="icon pull-left"><img src="<%templateskin%>/images/footer_contact_chuanzhen.png" alt=""></div>
+                                        <div class="mc pull-left">传　 真：{config.webcompany}</div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="icon pull-left"><img src="<%templateskin%>/images/footer_contact_youxiang.png" alt=""></div>
+                                        <div class="mc pull-left">邮   箱：{config.webmail}</div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="icon pull-left"><img src="<%templateskin%>/images/footer_contact_dizhi.png" alt=""></div>
+                                        <div class="mc pull-left">地   址：{config.webaddress}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="map pull-right">
+                            <div class="imgbox sizeCover">
+                                <%=get_article_content("ilxwm")%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="menu">
+                        <ul class="list-unstyled no-margin clearfix">
+                            <li><a href='<%linkurl("index")%>' class="tr">网站首页</a></li>
+                            <li><a href='<%linkurl("about",192)%>' class="tr">公司简介</a></li>
+                            <li><a href='<%linkurl("product")%>' class="tr">产品中心</a></li>
+                            <li><a href='<%linkurl("case")%>' class="tr">设备展示</a></li>
+                            <li><a href='<%linkurl("news")%>' class="tr">新闻资讯</a></li>
+                            <li><a href='<%linkurl("service")%>' class="tr">技术资料</a></li>
+                            <li><a href='<%linkurl("contact")%>' class="tr">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bot text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    版权所有 © 2019  {config.webname}  <a href="http://www.miitbeian.gov.cn" target="_blank" style="color:white">{config.webcrod}</a>  all rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="tabBar visible-xs">
+    <ul class="list-unstyled text-center no-margin clearfix">
+        <li class="pull-left">
+            <a href="tel:{config.webtel}">
+                <div class="icon"><img src="<%templateskin%>/images/tabBar_dianhua.png" alt=""></div>
+                <div class="mc">电话</div>
+            </a>
+        </li>
+        <li class="pull-left">
+            <a href="sms:{config.webtel}">
+                <div class="icon"><img src="<%templateskin%>/images/tabBar_duanxin.png" alt=""></div>
+                <div class="mc">短信</div>
+            </a>
+        </li>
+        <li class="pull-left">
+            <a>
+                <div class="icon"><img src="<%templateskin%>/images/tabBar_erweima.png" alt=""></div>
+                <div class="mc">微信</div>
+            </a>
+            <div class="tanchuang">
+                <div class="imgbox"><img src="{config.webewm1}" alt=""></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script src="<%templateskin%>/js/bootstrap.js"></script>
+<script src="<%templateskin%>/js/ie10-viewport-bug-workaround.js"></script>
+<script src="<%templateskin%>/js/swiper.min.js"></script>
+<script src="<%templateskin%>/js/style.js"></script>
+
+
+<script src="<%templateskin%>/js/subnav.js"></script>
+<script src="<%templateskin%>/js/tuijian.js"></script>
+
+<div class="yb_conct hidden-xs">
+    <div class="yb_bar">
+        <ul>
+            <li class="yb_top">返回顶部</li>
+            <li class="yb_phone">{config.webtel}</li>
+            <li class="yb_QQ">
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={config.webqq1}&amp;site=qq&amp;menu=yes&amp;from=message&amp;isappinstalled=0" title="即刻发送您的需求">在线咨询</a>
+            </li>
+            <li class="yb_ercode" style="height:53px;">
+                微信二维码 <br>
+                <img class="hd_qr" src="{config.webewm1}" alt="关注你附近" width="200">
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        // 悬浮窗口
+        $(".yb_conct").hover(function () {
+            $(".yb_conct").css("right", "5px");
+            $(".yb_bar .yb_ercode").css('height', '200px');
+        }, function () {
+            $(".yb_conct").css("right", "-127px");
+            $(".yb_bar .yb_ercode").css('height', '53px');
+        });
+        // 返回顶部
+        $(".yb_top").click(function () {
+            $("html,body").animate({
+                'scrollTop': '0px'
+            }, 300)
+        });
+    });
+</script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
